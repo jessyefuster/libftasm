@@ -1,9 +1,9 @@
 ; nasm -f macho64 ft_bzero.s -o ft_bzero.o & ld ft_bzero.o -lSystem -macosx_version_min 10.13 -o ft_bzero
 
 section	.data
-msg:
+test:
 	.str db "Test", 0
-	.len equ $ - msg.str
+	.len equ $ - test.str
 fmt:
 	.c db "%c", 10, 0
 	.s db "%s", 10, 0
@@ -18,32 +18,33 @@ start:
 	call _main
 	ret
 
+
+; DESCRIPTION
+;	Writes n zeroed bytes to the string s.
+;	If n is 0, does nothing
 _ft_bzero:
 	cmp rsi, 0					; check if len is 0
 	je	_end					; if it is, return
 
 	mov BYTE [rdi], 0			; set byte to 0
-	inc rdi						; go to next char
-	dec rsi
-	jmp _ft_bzero
+	inc rdi						;
+	dec rsi						; go to next char
+	jmp _ft_bzero				;
 
 _end:
 	ret
+
 
 _main:
 	push rbp						; store base stack pointer
 	mov rbp, rsp					; set stack pointer
 
-	lea rdi, [rel msg.str]			; 1st arg, string pointer
-	mov rsi, msg.len				; 2nd arg, bytes number
+	lea rdi, [rel test.str]			; 1st arg, string pointer
+	mov rsi, test.len				; 2nd arg, bytes number
 	call _ft_bzero
 
-	; lea rdi, [rel fmt.s]
-	; lea rsi, [rel msg.str]
-	; call _printf					; printf all string
-
 	lea rdi, [rel fmt.c]
-	mov rsi, [rel msg.str + 3]
+	mov rsi, [rel test.str + 3]
 	call _printf					; printf last char
 
 	pop rbp							; remove base stack pointer
