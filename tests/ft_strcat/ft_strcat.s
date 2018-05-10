@@ -1,10 +1,9 @@
 ; nasm -f macho64 ft_strcat.s -o ft_strcat.o & ld ft_strcat.o -lSystem -macosx_version_min 10.13 -o ft_strcat
 
 section	.data
-msg:
+test:
 	.str1 db "Con", 0, 0, 0, 0
 	.str2 db "cat", 0
-	; .len equ $ - msg.str
 fmt:
 	.c db "%c", 10, 0
 	.s db "%s", 10, 0
@@ -56,8 +55,8 @@ _main:
 	push rbp						; store base stack pointer
 	mov rbp, rsp					; set stack pointer
 
-	lea rdi, [rel msg.str1]			; 1st arg, 1st string
-	lea rsi, [rel msg.str2]			; 2nd arg, 2nd string
+	lea rdi, [rel test.str1]		; 1st arg, 1st string
+	lea rsi, [rel test.str2]		; 2nd arg, 2nd string
 	call _ft_strcat
 
 	lea rdi, [rel fmt.s]
