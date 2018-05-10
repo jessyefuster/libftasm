@@ -18,7 +18,11 @@ start:
 	call _main
 	ret
 
-
+; DESCRIPTION
+;	Appends a copy of the null-terminated str s2 to the end
+;	of the null-terminated str s2, then add a terminating 0
+; RETURN VALUE
+;	Returns pointer s1
 _ft_strcat:
 	push rdi				; store 1st str pointer
 
