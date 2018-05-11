@@ -1,23 +1,7 @@
-; nasm -f macho64 ft_bzero.s -o ft_bzero.o & ld ft_bzero.o -lSystem -macosx_version_min 10.13 -o ft_bzero
-
-section	.data
-test:
-	.str db "Test", 0
-	.len equ $ - test.str
-fmt:
-	.c db "%c", 10, 0
-	.s db "%s", 10, 0
+; nasm -f macho64 ft_bzero.s -o ft_bzero.o & gcc -c main.c -o main.o && gcc main.o ft_bzero.o -o ft_bzero
 
 section .text
-	global start
-	global _main
 	global _ft_bzero
-	extern _printf
-
-start:
-	call _main
-	ret
-
 
 ; DESCRIPTION
 ;	Writes n zeroed bytes to the string s.
@@ -32,21 +16,4 @@ _ft_bzero:
 	jmp _ft_bzero				;
 
 _end:
-	ret
-
-
-_main:
-	push rbp						; store base stack pointer
-	mov rbp, rsp					; set stack pointer
-
-	lea rdi, [rel test.str]			; 1st arg, string pointer
-	mov rsi, test.len				; 2nd arg, bytes number
-	call _ft_bzero
-
-	lea rdi, [rel fmt.c]
-	mov rsi, [rel test.str + 3]
-	call _printf					; printf last char
-
-	pop rbp							; remove base stack pointer
-	mov rax, 0						; set return value to OK
 	ret
