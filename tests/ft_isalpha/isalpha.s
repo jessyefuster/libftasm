@@ -24,11 +24,11 @@ start:
 ; RETURN VALUE
 ;	0 if char tests false, else non-0
 _ft_isalpha:
-	or BYTE[rdi], 0x20			; make uppercase letters lowercase
+	or rdi, 0x20			; make uppercase letters lowercase
 	
-	cmp BYTE [rdi], 'a'			; if below 'a', not alpha
+	cmp rdi, 'a'			; if below 'a', not alpha
 	jl _not_alpha
-	cmp BYTE [rdi], 'z'			; if above 'z', not alpha
+	cmp rdi, 'z'			; if above 'z', not alpha
 	jg _not_alpha
 
 	mov rax, 1
@@ -43,7 +43,7 @@ _main:
 	push rbp						; store base stack pointer
 	mov rbp, rsp					; set stack pointer
 
-	mov rdi, test.char
+	mov rdi, 'c'
 	call _ft_isalpha
 
 	lea rdi, [rel fmt.d]
