@@ -2,7 +2,6 @@
 
 section .text
 	global _ft_isalpha
-	extern _printf
 
 ; DESCRIPTION
 ;	Tests if character is alpha (either isupper or islower)
