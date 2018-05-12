@@ -18,6 +18,7 @@ section .text
 	global _main
 	global _ft_puts
 	extern _printf
+	extern _ft_strlen
 
 start:
 	call _main
@@ -44,10 +45,6 @@ _ft_puts:
 	call _write
 	syscall
 
-	ret
-
-_ft_strlen:
-	mov rax, test.len
 	ret
 
 _write:
