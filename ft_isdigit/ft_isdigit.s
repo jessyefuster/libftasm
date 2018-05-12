@@ -1,4 +1,4 @@
-; nasm -f macho64 ft_isdigit.s -o ft_isdigit.o & gcc -c main.c -o main.o && gcc main.o ft_isdigit.o -o ft_isdigit && rm *.o
+; nasm -f macho64 ft_isdigit.s -o ft_isdigit.o && gcc -c main.c -o main.o && gcc main.o ft_isdigit.o -o ft_isdigit && rm *.o
 
 section .text
 	global _ft_isdigit
