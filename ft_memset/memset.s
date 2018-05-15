@@ -30,6 +30,7 @@ _ft_memset:
 	mov rax, rsi		; char to fill
 	mov rcx, rdx		; n bytes to iter
 
+	cld
 	rep stosb			; memset
 
 	pop rax
