@@ -1,28 +1,17 @@
-; nasm -f macho64 puts.s -o puts.o & ld puts.o -lSystem -macosx_version_min 10.13 -o puts
 %define WRITE				4
 %define MACH_SYSCALL(nb)	0x2000000 | nb
 %define STDOUT				1
 
 section	.data
 test:
-	.str db "Test", 0
 	.null db "(null)", 10, 0
 	.nl db 10
-fmt:
-	.c db "%c", 10, 0
-	.s db "%s", 10, 0
-	.d db "%d", 10, 0
 
 section .text
 	global start
 	global _main
 	global _ft_puts
-	extern _printf
 	extern _ft_strlen
-
-start:
-	call _main
-	ret
 
 ; DESCRIPTION
 ;	Write the string, and a terminating newline
@@ -62,15 +51,4 @@ _null:
 	call _write					; print "(null)"
 
 	mov rax, -1
-	ret
-
-_main:
-	push rbp						; store base stack pointer
-	mov rbp, rsp					; set stack pointer
-
-	lea rdi, [rel test.str]
-	call _ft_puts
-
-	pop rbp							; remove base stack pointer
-	mov rax, 0						; set return value to OK
 	ret
