@@ -8,8 +8,6 @@ test:
 	.nl db 10
 
 section .text
-	global start
-	global _main
 	global _ft_puts
 	extern _ft_strlen
 
