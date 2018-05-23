@@ -11,6 +11,8 @@
 
 section .data
 	file: db "main.c", 0
+	fmt: db "fd: %d", 10, 0
+	fmt2: db "read: %d", 10, 0
 
 section	.bss
 	buffer:	resb BUFF_SIZE + 1
@@ -27,13 +29,13 @@ start:
 
 _ft_cat:
 	cmp rdi, 0			
-	jl _error			; if FD is negative, error
-	push rbp
+	jl _error						; if FD is negative, error
+
+	push rbp						; store FD on stack
 	mov rbp, rdi
 
-	call _read_loop		; loop
+	call _read_loop					; read loop
 
-	mov rax, 0
 	pop rbp
 	ret
 
@@ -41,20 +43,20 @@ _read_loop:
 	mov rdi, rbp
 	lea rsi, [rel buffer]
 	mov rdx, BUFF_SIZE
-	mov rax, MACH_SYSCALL(READ)
+	mov rax, MACH_SYSCALL(READ)		; read file
 	syscall
+	jc _error						; if read failed, error
 
-	cmp rax, 0
-	je _end
-
+	cmp rax, 0						; if there's nothing left to read,
+	je _end							; end loop, no error
 
 	mov rdi, STDOUT
 	lea rsi, [rel buffer]
 	mov rdx, rax
 	mov rax, MACH_SYSCALL(WRITE)
-	syscall
+	syscall							; write what was read
 
-	jmp _read_loop
+	jmp _read_loop					; repeat
 
 _end:
 	mov rax, 0
@@ -69,7 +71,7 @@ _main:
 	mov rsi, 0x0
 	mov rax, MACH_SYSCALL(OPEN)
 	syscall							; getting FD of "test.txt"
-
+	
 	mov rdi, rax
 	call _ft_cat					; cat
 
