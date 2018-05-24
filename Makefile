@@ -6,13 +6,16 @@
 #    By: jfuster <jfuster@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/23 16:30:25 by jfuster           #+#    #+#              #
-#    Updated: 2018/05/23 16:43:08 by jfuster          ###   ########.fr        #
+#    Updated: 2018/05/24 16:44:05 by jfuster          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libfts.a
 
+TEST = testing
+
 NASM = ~/.brew/bin/nasm
+CC = gcc
 
 SRCS =	srcs/ft_bzero.s \
 		srcs/ft_cat.s \
@@ -31,8 +34,17 @@ SRCS =	srcs/ft_bzero.s \
 
 SRCO = $(SRCS:.s=.o)
 
+SRCS_TEST = tests/main.c \
+			tests/test_bzero.c
+
+SRCO_TEST = $(SRCS_TEST:.c=.o)
+
 %.o:%.s
 	$(NASM) -f macho64 $< -o $@
+
+%.o:%.c
+	$(CC) -c $< -o $@
+
 
 all: $(NAME)
 
@@ -47,3 +59,8 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+tests: $(NAME) test
+
+test: $(SRCO_TEST)
+	$(CC) $(NAME) $(SRCO_TEST) -o $(TEST)
