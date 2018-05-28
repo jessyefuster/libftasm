@@ -19,16 +19,16 @@ _ft_cat:
 	cmp rdi, 0			
 	jl _error						; if FD is negative, error
 
-	push rbp						; store FD on stack
-	mov rbp, rdi
+	push rbx						; store FD on stack
+	mov rbx, rdi
 
 	call _read_loop					; read loop
 
-	pop rbp
+	pop rbx
 	ret
 
 _read_loop:
-	mov rdi, rbp
+	mov rdi, rbx
 	lea rsi, [rel buffer]
 	mov rdx, BUFF_SIZE
 	mov rax, MACH_SYSCALL(READ)		; read file

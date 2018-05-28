@@ -6,7 +6,7 @@
 #    By: jfuster <jfuster@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/23 16:30:25 by jfuster           #+#    #+#              #
-#    Updated: 2018/05/24 16:44:05 by jfuster          ###   ########.fr        #
+#    Updated: 2018/05/28 15:52:35 by jfuster          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,20 @@ SRCS =	srcs/ft_bzero.s \
 SRCO = $(SRCS:.s=.o)
 
 SRCS_TEST = tests/main.c \
-			tests/test_bzero.c
+			tests/test_bzero.c \
+			tests/test_cat.c \
+			tests/test_isalnum.c \
+			tests/test_isascii.c \
+			tests/test_isdigit.c \
+			tests/test_isalpha.c \
+			tests/test_memcpy.c \
+			tests/test_memset.c \
+			tests/test_puts.c \
+			tests/test_strcat.c \
+			tests/test_strdup.c \
+			tests/test_strlen.c \
+			tests/test_tolower.c \
+			tests/test_toupper.c
 
 SRCO_TEST = $(SRCS_TEST:.c=.o)
 
