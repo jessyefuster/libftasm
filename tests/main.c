@@ -68,5 +68,12 @@ int		main(int argc, char **argv)
 		test_memset();
 		printf("\n\n");
 	}
+
+	if (argc == 1 || (argc > 1 && strcmp("puts", argv[1]) == 0))
+	{
+		printf("PUTS TEST:\n\n");
+		test_puts();
+		printf("\n\n");
+	}
 	return (0);
 }

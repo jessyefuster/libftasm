@@ -17,6 +17,7 @@ extern int		ft_isascii(int c);
 extern int		ft_isdigit(int c);
 extern void		*ft_memcpy(void *restrict dst, void *restrict src, size_t n);
 extern void		*ft_memset(void *b, int c, size_t len);
+extern int		ft_puts(const char *s);
 
 
 void		test_bzero(void);

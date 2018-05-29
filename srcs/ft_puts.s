@@ -36,6 +36,8 @@ _ft_puts:
 	mov rdx, 1
 	call _write
 
+	jc _error
+
 	mov rax, 1
 	ret
 
@@ -50,5 +52,9 @@ _null:
 	mov rdx, 7
 	call _write					; print "(null)"
 
+	mov rax, 1
+	ret
+
+_error:
 	mov rax, -1
 	ret
