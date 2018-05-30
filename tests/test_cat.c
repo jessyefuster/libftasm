@@ -2,6 +2,8 @@
 
 void	test_cat(void)
 {
+	printf("CAT TEST:\n\n");
+
 	int		fd;
 
 	//

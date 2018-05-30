@@ -2,6 +2,8 @@
 
 void	test_isdigit(void)
 {
+	printf("ISDIGIT TEST:\n\n");
+	
 	//
 	printf("  TEST 1 - isdigit(-10) :\n");
 

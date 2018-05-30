@@ -2,6 +2,8 @@
 
 void	test_isalnum(void)
 {
+	printf("ISALNUM TEST:\n\n");
+	
 	//
 	printf("  TEST 1 - isalnum(-10) :\n");
 

@@ -2,6 +2,8 @@
 
 void	test_isascii(void)
 {
+	printf("ISASCII TEST:\n\n");
+	
 	//
 	printf("  TEST 1 - isascii(-10) :\n");
 

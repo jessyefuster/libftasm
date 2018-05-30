@@ -2,6 +2,8 @@
 
 void	test_memcpy(void)
 {
+	printf("MEMCPY TEST:\n\n");
+	
 	char	*dst = strdup("Erase me");
 	char	*src = strdup("xxxxxxxxx");
 	size_t	len_dst = strlen(dst);

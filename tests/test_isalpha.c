@@ -2,6 +2,8 @@
 
 void	test_isalpha(void)
 {
+	printf("ISALPHA TEST:\n\n");
+	
 	//
 	printf("  TEST 1 - isalpha(-10) :\n");
 

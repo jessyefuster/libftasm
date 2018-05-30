@@ -2,6 +2,8 @@
 
 void	test_memset(void)
 {
+	printf("MEMSET TEST:\n\n");
+	
 	char	*dst = strdup("Erase me");
 	char	c = 'x';
 	size_t	len_dst = strlen(dst);

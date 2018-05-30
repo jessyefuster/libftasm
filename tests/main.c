@@ -15,7 +15,6 @@ int		main(int argc, char **argv)
 {
 	if (argc == 1 || (argc > 1 && strcmp("bzero", argv[1]) == 0))
 	{
-		printf("BZERO TEST:\n\n");
 		test_bzero();
 		printf("\n\n");
 	}
@@ -29,51 +28,74 @@ int		main(int argc, char **argv)
 
 	if (argc == 1 || (argc > 1 && strcmp("isalnum", argv[1]) == 0))
 	{
-		printf("ISALNUM TEST:\n\n");
 		test_isalnum();
 		printf("\n");
 	}
 
 	if (argc == 1 || (argc > 1 && strcmp("isalpha", argv[1]) == 0))
 	{
-		printf("ISALPHA TEST:\n\n");
 		test_isalpha();
 		printf("\n");
 	}
 
 	if (argc == 1 || (argc > 1 && strcmp("isascii", argv[1]) == 0))
 	{
-		printf("ISASCII TEST:\n\n");
 		test_isascii();
 		printf("\n");
 	}
 
 	if (argc == 1 || (argc > 1 && strcmp("isdigit", argv[1]) == 0))
 	{
-		printf("ISDIGIT TEST:\n\n");
 		test_isdigit();
 		printf("\n");
 	}
 
 	if (argc == 1 || (argc > 1 && strcmp("memcpy", argv[1]) == 0))
 	{
-		printf("MEMCPY TEST:\n\n");
 		test_memcpy();
 		printf("\n\n");
 	}
 
 	if (argc == 1 || (argc > 1 && strcmp("memset", argv[1]) == 0))
 	{
-		printf("MEMSET TEST:\n\n");
 		test_memset();
 		printf("\n\n");
 	}
 
 	if (argc == 1 || (argc > 1 && strcmp("puts", argv[1]) == 0))
 	{
-		printf("PUTS TEST:\n\n");
 		test_puts();
 		printf("\n\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("strcat", argv[1]) == 0))
+	{
+		test_strcat();
+		printf("\n\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("strdup", argv[1]) == 0))
+	{
+		test_strdup();
+		printf("\n\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("strlen", argv[1]) == 0))
+	{
+		test_strlen();
+		printf("\n\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("tolower", argv[1]) == 0))
+	{
+		test_tolower();
+		printf("\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("toupper", argv[1]) == 0))
+	{
+		test_toupper();
+		printf("\n");
 	}
 	return (0);
 }

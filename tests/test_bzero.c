@@ -2,6 +2,8 @@
 
 void	test_bzero(void)
 {
+	printf("BZERO TEST:\n\n");
+	
 	char	*s = strdup("Hello, World !");
 	size_t	n = strlen(s);
 

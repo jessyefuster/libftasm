@@ -8,6 +8,12 @@
 # include <stdio.h>
 # include <fcntl.h>
 # include <ctype.h>
+# include <limits.h>
+# include <time.h>
+
+#define COLOR_RED	"\033[0;31m"
+#define COLOR_GREEN	"\033[0;32m"
+#define COLOR_RESET	"\033[0m"
 
 extern void		ft_bzero(void *s, size_t n);
 extern void		ft_cat(int fd);
@@ -18,6 +24,11 @@ extern int		ft_isdigit(int c);
 extern void		*ft_memcpy(void *restrict dst, void *restrict src, size_t n);
 extern void		*ft_memset(void *b, int c, size_t len);
 extern int		ft_puts(const char *s);
+extern char		*ft_strcat(char *restrict s1, const char *restrict s2);
+extern char		*ft_strdup(const char *s1);
+extern size_t	ft_strlen(const char *s);
+extern int		ft_tolower(int c);
+extern int		ft_toupper(int c);
 
 
 void		test_bzero(void);
