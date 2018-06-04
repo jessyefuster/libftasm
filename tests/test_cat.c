@@ -7,14 +7,14 @@ void	test_cat(void)
 	int		fd;
 
 	//
-	printf("  TEST 1 - cat(-1) :\n");
+	printf("  TEST 1 - cat(fd(\"auteur\")) :\n");
 
-	ft_cat(-1);
+	write(1, "      cat: x", 11);
+	system("cat auteur");
+
+	write(1, "      ft_cat: ", 14);
+	fd = open("auteur", O_RDONLY);
+	ft_cat(fd);
+	close(fd);
 	//
-
-	//
-	printf("  TEST 2 - cat(1000) :\n");
-
-	ft_cat(1000);
-	//	
 }

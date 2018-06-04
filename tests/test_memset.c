@@ -1,7 +1,22 @@
 #include "tests.h"
 
+static int	tests(void)
+{
+	return (1);
+}
+
 void	test_memset(void)
 {
+	if (!tests())
+	{
+		printf(COLOR_RED);
+		printf("(failure)  ");
+	}
+	else
+	{
+		printf(COLOR_RESET);
+	}
+
 	printf("MEMSET TEST:\n\n");
 	
 	char	*dst = strdup("Erase me");

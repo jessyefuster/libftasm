@@ -9,12 +9,12 @@ section .text
 ; RETURN VALUE
 ;	0 if char tests false, else non-0
 _ft_isalnum:
-	call _ft_isalpha		;
-	cmp rax, 1				; check if alpha
-	je _alnum				;
-
 	call _ft_isdigit		;
 	cmp rax, 1				; check if digit
+	je _alnum				;
+
+	call _ft_isalpha		;
+	cmp rax, 1				; check if alpha
 	je _alnum				;
 
 	mov rax, 0

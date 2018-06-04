@@ -19,12 +19,11 @@ int		main(int argc, char **argv)
 		printf("\n\n");
 	}
 
-	// if (argc == 1 || (argc > 1 && strcmp("cat", argv[1]) == 0))
-	// {
-	// 	printf("CAT TEST:\n\n");
-	// 	test_cat();
-	// 	printf("\n\n");
-	// }
+	if (argc == 1 || (argc > 1 && strcmp("cat", argv[1]) == 0))
+	{
+		test_cat();
+		printf("\n\n");
+	}
 
 	if (argc == 1 || (argc > 1 && strcmp("isalnum", argv[1]) == 0))
 	{

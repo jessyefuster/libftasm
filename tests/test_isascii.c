@@ -1,7 +1,34 @@
 #include "tests.h"
 
+static	int	tests(void)
+{
+	int		ret;
+	int		ret_ft;
+
+	for (int c = SCHAR_MIN; c <= UCHAR_MAX; c++)
+	{
+		ret = isascii(c);
+		ret_ft = ft_isascii(c);
+		if (ret != ret_ft)
+			return (0);
+	}
+
+	return (1);
+}
+
 void	test_isascii(void)
 {
+	if (!tests())
+	{
+		printf(COLOR_RED);
+		printf("(failure)  ");
+	}
+	else
+	{
+		printf(COLOR_GREEN);
+		printf("(success)  ");
+	}
+
 	printf("ISASCII TEST:\n\n");
 	
 	//

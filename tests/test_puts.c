@@ -2,6 +2,10 @@
 
 void	test_puts(void)
 {
+	printf(COLOR_RESET);
+
+	//
+
 	printf("PUTS TEST:\n\n");
 
 	int		save_stdout = dup(STDOUT_FILENO);

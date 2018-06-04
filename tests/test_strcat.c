@@ -17,6 +17,7 @@ static	int	tests(void)
 	char	*ret;
 	char	*ret_ft;
 	char	**s1;
+	char	**s1_ft;
 	char	**s2;
 
 	s1 = (char **)malloc(sizeof(char *) * 4);
@@ -24,6 +25,11 @@ static	int	tests(void)
 	s1[1] = strdup("sdhsdjs\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
 	s1[2] = strdup("asasfsdfsdvcvs\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
 	s1[3] = strdup("sas\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
+	s1_ft = (char **)malloc(sizeof(char *) * 4);
+	s1_ft[0] = strdup("\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
+	s1_ft[1] = strdup("sdhsdjs\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
+	s1_ft[2] = strdup("asasfsdfsdvcvs\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
+	s1_ft[3] = strdup("sas\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0");
 
 	s2 = (char **)malloc(sizeof(char *) * 4);
 	s2[0]= "";
@@ -36,17 +42,12 @@ static	int	tests(void)
 		for (int j = 0; j < 4; j++)
 		{
 			ret = strcat(s1[i], s2[j]);
-			tests_reset_str(s1, i);
-			ret_ft = ft_strcat(s1[i], s2[j]);
-			printf("%s\n", ret_ft);
-			if (strcmp(ret, ret_ft) != 0)
+			ret_ft = ft_strcat(s1_ft[i], s2[j]);
+			if (strcmp(ret, ret_ft) != 0 || ret_ft != s1_ft[i])
 				return (0);
+			tests_reset_str(s1, i);
+			tests_reset_str(s1_ft, i);
 		}
-		// ret = strcat(s1[rand_src], s2[rand_dst]);
-		// ret_ft = ft_strcat(s1[rand_src], s2[rand_dst]);
-		// printf("%s\n", ret_ft);
-		// if (strcmp(ret, ret_ft) != 0 || ret_ft != s1[rand_src])
-		// 	return (0);
 	}
 
 	return (1);

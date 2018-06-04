@@ -7,7 +7,7 @@ section .text
 ; RETURN VALUE
 ;	0 if char tests false, else non-0
 _ft_isalpha:
-	or rdi, 0x20				; make uppercase letters lowercase
+	or rdi, 0x20			; make uppercase letters lowercase
 	
 	cmp rdi, 'a'			; if below 'a', not alpha
 	jl _not_alpha

@@ -1,7 +1,22 @@
 #include "tests.h"
 
+static	int	tests(void)
+{
+	return (1);
+}
+
 void	test_bzero(void)
 {
+	if (!tests())
+	{
+		printf(COLOR_RED);
+		printf("(failure)  ");
+	}
+	else
+	{
+		printf(COLOR_RESET);
+	}
+
 	printf("BZERO TEST:\n\n");
 	
 	char	*s = strdup("Hello, World !");
