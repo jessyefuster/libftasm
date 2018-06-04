@@ -9,7 +9,7 @@ void	test_cat(void)
 	//
 	printf("  TEST 1 - cat(fd(\"auteur\")) :\n");
 
-	write(1, "      cat: x", 11);
+	write(1, "      cat: ", 11);
 	system("cat auteur");
 
 	write(1, "      ft_cat: ", 14);
