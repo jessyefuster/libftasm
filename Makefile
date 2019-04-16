@@ -6,7 +6,7 @@
 #    By: jfuster <jfuster@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/23 16:30:25 by jfuster           #+#    #+#              #
-#    Updated: 2018/05/28 15:52:35 by jfuster          ###   ########.fr        #
+#    Updated: 2019/04/16 15:55:42 by jfuster          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS =	srcs/ft_bzero.s \
 		srcs/ft_isalpha.s \
 		srcs/ft_isascii.s \
 		srcs/ft_isdigit.s \
+		srcs/ft_isprint.s \
 		srcs/ft_memcpy.s \
 		srcs/ft_memset.s \
 		srcs/ft_puts.s \
@@ -30,7 +31,8 @@ SRCS =	srcs/ft_bzero.s \
 		srcs/ft_strdup.s \
 		srcs/ft_strlen.s \
 		srcs/ft_tolower.s \
-		srcs/ft_toupper.s
+		srcs/ft_toupper.s \
+		srcs/ft_isspace_bonus.s
 
 SRCO = $(SRCS:.s=.o)
 
