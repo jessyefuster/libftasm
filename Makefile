@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jfuster <jfuster@student.42.fr>            +#+  +:+       +#+         #
+#    By: jessyefuster <jessyefuster@student.42.fr>  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/23 16:30:25 by jfuster           #+#    #+#              #
-#    Updated: 2019/04/16 15:55:42 by jfuster          ###   ########.fr        #
+#    Updated: 2019/04/17 14:19:24 by jessyefuster     ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ NAME = libfts.a
 TEST = testing
 
 NASM = ~/.brew/bin/nasm
+
 CC = gcc
 
 SRCS =	srcs/ft_bzero.s \
@@ -32,7 +33,11 @@ SRCS =	srcs/ft_bzero.s \
 		srcs/ft_strlen.s \
 		srcs/ft_tolower.s \
 		srcs/ft_toupper.s \
-		srcs/ft_isspace_bonus.s
+		srcs/ft_isspace.s \
+		srcs/ft_islower.s \
+		srcs/ft_isupper.s \
+		srcs/ft_isblank.s \
+		srcs/ft_iscntrl.s
 
 SRCO = $(SRCS:.s=.o)
 
@@ -43,6 +48,7 @@ SRCS_TEST = tests/main.c \
 			tests/test_isascii.c \
 			tests/test_isdigit.c \
 			tests/test_isalpha.c \
+			tests/test_isprint.c \
 			tests/test_memcpy.c \
 			tests/test_memset.c \
 			tests/test_puts.c \
@@ -50,7 +56,12 @@ SRCS_TEST = tests/main.c \
 			tests/test_strdup.c \
 			tests/test_strlen.c \
 			tests/test_tolower.c \
-			tests/test_toupper.c
+			tests/test_toupper.c \
+			tests/test_isspace.c \
+			tests/test_islower.c \
+			tests/test_isupper.c \
+			tests/test_isblank.c \
+			tests/test_iscntrl.c
 
 SRCO_TEST = $(SRCS_TEST:.c=.o)
 

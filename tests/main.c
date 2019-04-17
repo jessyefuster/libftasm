@@ -49,6 +49,12 @@ int		main(int argc, char **argv)
 		printf("\n");
 	}
 
+	if (argc == 1 || (argc > 1 && strcmp("isprint", argv[1]) == 0))
+	{
+		test_isprint();
+		printf("\n");
+	}
+
 	if (argc == 1 || (argc > 1 && strcmp("memcpy", argv[1]) == 0))
 	{
 		test_memcpy();
@@ -96,5 +102,36 @@ int		main(int argc, char **argv)
 		test_toupper();
 		printf("\n");
 	}
+
+	if (argc == 1 || (argc > 1 && strcmp("isspace", argv[1]) == 0))
+	{
+		test_isspace();
+		printf("\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("isupper", argv[1]) == 0))
+	{
+		test_isupper();
+		printf("\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("islower", argv[1]) == 0))
+	{
+		test_islower();
+		printf("\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("isblank", argv[1]) == 0))
+	{
+		test_isblank();
+		printf("\n");
+	}
+
+	if (argc == 1 || (argc > 1 && strcmp("iscntrl", argv[1]) == 0))
+	{
+		test_iscntrl();
+		printf("\n");
+	}
+
 	return (0);
 }
